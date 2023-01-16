@@ -10,9 +10,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter render={(count, incrementCount) => <ClickCounter count={count} incrementCount={incrementCount} />} />
+        <Counter>
+          {(count, incrementCount) => <ClickCounter count={count} incrementCount={incrementCount} />}
+        </Counter>
 
-        <Counter render={(count, incrementCount) => <HoverCounter count={count} incrementCount={incrementCount} />} />
+        <Counter>
+          {(count, incrementCount) => <HoverCounter count={count} incrementCount={incrementCount} />}
+        </Counter>
       </header>
     </div>
   );
