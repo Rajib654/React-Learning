@@ -4,9 +4,10 @@ import Counter from './components/Counter';
 import Section from './components/Section';
 import logo from './logo.svg';
 import React from 'react';
+import ThemeContext from './context/themeContext'
 
 class App extends React.Component {
-  state = { theme: "dark", }
+  state = { theme: "light", }
   render() {
     const { theme } = this.state;
     return (
@@ -16,7 +17,7 @@ class App extends React.Component {
           <Counter>
             {(count, incrementCount) => <ClickCounter count={count} incrementCount={incrementCount} />}
           </Counter>
-          <Section theme={theme} />
+          <ThemeContext.Provider value={{ theme: theme }}><Section /></ThemeContext.Provider>
         </header>
       </div>
     );
