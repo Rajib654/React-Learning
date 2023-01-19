@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  // Create A new Element
+
+  // const element = React.createElement('h1', {className:'heading'}, "Hello World"); //First Parameter= element Type,2nd Parameter= element properties,3rd Parameter= element content
+
+
+  const element = (<h1 className='heading'>
+    <span type='text'>Hello World</span>
+  </h1>) // To write multi line use () symbol & to provide element properties use camelcasing 
+
+  /*
+   element ={
+    type:'h1',
+    props:{
+      className:"heading",
+      children:"Hello World"
+    },
+   };
+   */
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    element
   );
 }
 
